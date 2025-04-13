@@ -77,8 +77,9 @@ class _MyHomePageState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.transparent,
       drawer: GetAppsList(),
+      appBar: null,
       body: RefreshIndicator(
         onRefresh: () => refresh(),
         child: Padding(

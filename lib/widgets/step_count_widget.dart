@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:pedometer/pedometer.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -14,6 +14,13 @@ class _StepCountState extends State<StepCountWidget> {
   late Stream<StepCount> _stepCountStream;
   late Stream<PedestrianStatus> _pedestrianStatusStream;
   String _status = '?', _steps = '?';
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
 
   void onStepCount(StepCount event) {
     print(event);
@@ -73,6 +80,6 @@ class _StepCountState extends State<StepCountWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Text('$_steps Steps Today');
+    return Text('$_steps Steps Today', style: TextStyle(color: Colors.white));
   }
 }
